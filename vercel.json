@@ -1,6 +1,6 @@
 {
     "builds": [
-      { "src": "wsgi.py", "use": "@vercel/python" }
+      { "src": "shree_vishnu/wsgi.py", "use": "@vercel/python" }
     ],
     "routes": [
       { "src": "/register/", "dest": "myapp.urls:UserRegistrationView.as_view()" },
@@ -29,4 +29,4 @@
       { "src": "/LeaveapplicationView/", "dest": "myapp.urls:LeaveapplicationView.as_view()" },
       { "src": "/getallLeaveapplication/", "dest": "myapp.urls:LeaveapplicationView.as_view()" },
       { "src": "/Leaveapplicationfilter/", "dest": "myapp.urls:Leave()"}
-  
+    ]
