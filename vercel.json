@@ -3,12 +3,30 @@
       { "src": "wsgi.py", "use": "@vercel/python" }
     ],
     "routes": [
-      { "src": "register/", "dest": "register/" },
-      { "src": "login/", "dest": "login/" },
-      { "src": "/(.*)", "dest": "/wsgi.py" }
-    ],
-    "rewrites": [
-      { "source": "/api/users/([^/]+)/?", "destination": "/api/users/$1/" }
-    ]
-  }
+      { "src": "/register/", "dest": "myapp.urls:UserRegistrationView.as_view()" },
+      { "src": "/login/", "dest": "myapp.urls:UserLoginView.as_view()" },
+      { "src": "/logout/", "dest": "myapp.urls:UserLogoutView.as_view()" },
+      { "src": "/project/", "dest": "myapp.urls:ProjectView.as_view()" },
+      { "src": "/parts/", "dest": "myapp.urls:PartsView.as_view()" },
+      { "src": "/task/", "dest": "myapp.urls:TaskView.as_view()" },
+      { "src": "/timesheet/", "dest": "myapp.urls:TimesheetView.as_view()" },
+      { "src": "/get_user_history/", "dest": "myapp.urls:Get_UserHistory.as_view()" },
+      { "src": "/getallprojects/", "dest": "myapp.urls:Getproject.as_view()" },
+      { "src": "/updateprojects/<int:id>/", "dest": "myapp.urls:UpdateProjects.as_view()" },
+      { "src": "/deleteprojects/<int:id>/", "dest": "myapp.urls:UpdateProjects.as_view()" },
+      { "src": "/allparts/", "dest": "myapp.urls:PartsView.as_view()" },
+      { "src": "/updateparts/<int:id>/", "dest": "myapp.urls:UpdatePartsView.as_view()" },
+      { "src": "/deleteparts/<int:id>/", "dest": "myapp.urls:UpdatePartsView.as_view()" },
+      { "src": "/alltasks/", "dest": "myapp.urls:Gettask.as_view()" },
+      { "src": "/updatetasks/<int:id>/", "dest": "myapp.urls:UpdateTaskView.as_view()" },
+      { "src": "/deletetasks/<int:id>/", "dest": "myapp.urls:UpdateTaskView.as_view()" },
+      { "src": "/allinventory/", "dest": "myapp.urls:InventoryView.as_view()" },
+      { "src": "/updateinventory/<int:id>/", "dest": "myapp.urls:InventoryView.as_view()" },
+      { "src": "/deletetinventory/<int:id>/", "dest": "myapp.urls:InventoryView.as_view()" },
+      { "src": "/alltransporter/", "dest": "myapp.urls:TransporterView.as_view()" },
+      { "src": "/updatetransporter/<int:id>/", "dest": "myapp.urls:TransporterView.as_view()" },
+      { "src": "/deletetransporter/<int:id>/", "dest": "myapp.urls:TransporterView.as_view()" },
+      { "src": "/LeaveapplicationView/", "dest": "myapp.urls:LeaveapplicationView.as_view()" },
+      { "src": "/getallLeaveapplication/", "dest": "myapp.urls:LeaveapplicationView.as_view()" },
+      { "src": "/Leaveapplicationfilter/", "dest": "myapp.urls:Leave
   
