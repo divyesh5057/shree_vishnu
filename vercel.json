@@ -30,3 +30,4 @@
       { "src": "/getallLeaveapplication/", "dest": "myapp.urls:LeaveapplicationView.as_view()" },
       { "src": "/Leaveapplicationfilter/", "dest": "myapp.urls:Leave()"}
     ]
+}
