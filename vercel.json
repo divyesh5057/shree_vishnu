@@ -2,6 +2,16 @@
     "builds": [
       { "src": "shree_vishnu/wsgi.py", "use": "@vercel/python" }
     ],
+        "version": 2,
+    "env": {
+        "VERCEL_BUILD_DEBUG": "1"
+    },
+    "commands": {
+        "build": {
+        "use": "vercel-external-command",
+        "command": "sudo apt-get update && sudo apt-get install -y libmysqlclient-dev"
+        }
+    },
     "routes": [
       { "src": "/register/", "dest": "myapp.urls:UserRegistrationView.as_view()" },
       { "src": "/login/", "dest": "myapp.urls:UserLoginView.as_view()" },
