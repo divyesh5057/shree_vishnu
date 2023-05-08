@@ -28,5 +28,5 @@
       { "src": "/deletetransporter/<int:id>/", "dest": "myapp.urls:TransporterView.as_view()" },
       { "src": "/LeaveapplicationView/", "dest": "myapp.urls:LeaveapplicationView.as_view()" },
       { "src": "/getallLeaveapplication/", "dest": "myapp.urls:LeaveapplicationView.as_view()" },
-      { "src": "/Leaveapplicationfilter/", "dest": "myapp.urls:Leave
+      { "src": "/Leaveapplicationfilter/", "dest": "myapp.urls:Leave()"}
   
