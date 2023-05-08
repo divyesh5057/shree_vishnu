@@ -3,7 +3,12 @@
       { "src": "wsgi.py", "use": "@vercel/python" }
     ],
     "routes": [
+      { "src": "register/", "dest": "register/" },
+      { "src": "login/", "dest": "login/" },
       { "src": "/(.*)", "dest": "/wsgi.py" }
+    ],
+    "rewrites": [
+      { "source": "/api/users/([^/]+)/?", "destination": "/api/users/$1/" }
     ]
   }
   
