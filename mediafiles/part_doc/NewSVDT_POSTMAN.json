@@ -1,0 +1,2272 @@
+{
+	"info": {
+		"_postman_id": "32e3c98f-07ad-4649-9c8b-0c09bfcac6bd",
+		"name": "Shree_Vishnu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26034618",
+		"_collection_link": "https://lively-escape-597342.postman.co/workspace/My-Workspace~b72a8e4e-4e2a-4daf-8cec-3ee69c9d6f9d/collection/26034618-32e3c98f-07ad-4649-9c8b-0c09bfcac6bd?action=share&creator=26034618&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Admin side",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "User Reg",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"ram\",\n    \"email\":\"ram@gmail.com\",\n    \"password\":\"admin@123\",\n    \"password2\":\"admin@12\",\n    \"is_admin\":\"True\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/register/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"register",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all user",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/getallusers/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"getallusers",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update user",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"jack1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/updateuser/53/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"updateuser",
+										"53",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete user",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/updateuser/53/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"updateuser",
+										"53",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Project",
+					"item": [
+						{
+							"name": "Add project",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emp\":[67],\n    \"project_name\":\"TTPM\",\n    \"project_pricing\":\"100000\",\n    \"inventory\":[3],\n    \"working_status\":\"InProgress\",\n    \"project_description\":\"Create Model 3.0.0 \"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/project/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"project",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Projects",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/getallprojects/?page=1&page_size=82",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"getallprojects",
+										""
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "82"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Project",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n        \"project_name\": \"Project aws 1\",\n        \"project_pricing\": \"10000\",\n        \"working_status\": \"InProgress\",\n        \"project_description\": \"nice project\",\n        \"project_inventory\": 0,\n        \"created_at\": \"2023-05-22T11:36:39.592363Z\",\n        \"emp\": [\n            54\n        ],\n        \"inventory\": [\n            3\n        ]\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/updateprojects/91/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"updateprojects",
+										"91",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delet project",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/deleteprojects/54/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"deleteprojects",
+										"54",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Project img doc",
+					"item": [
+						{
+							"name": "Add project img doc",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "project_id",
+											"value": "96",
+											"type": "text"
+										},
+										{
+											"key": "project_doc",
+											"type": "file",
+											"src": "/home/koli/Downloads/Employee_Details.pdf"
+										},
+										{
+											"key": "project_img",
+											"type": "file",
+											"src": "/home/koli/Pictures/Screenshots/Screenshot from 2023-05-08 11-55-31.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/projectimgioc/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"projectimgioc",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get project imag and doc",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/projectimgioc/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"projectimgioc",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update project img doc",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "project_id",
+											"value": "93",
+											"type": "text"
+										},
+										{
+											"key": "project_doc",
+											"type": "file",
+											"src": "/home/koli/Downloads/Project_Details.pdf"
+										},
+										{
+											"key": "project_img",
+											"type": "file",
+											"src": "/home/koli/Pictures/Screenshots/Screenshot from 2022-12-29 12-41-38.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/updateprojectimgioc/1/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"updateprojectimgioc",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete project img doc",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/deleteprojectimgioc/1/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"deleteprojectimgioc",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Parts",
+					"item": [
+						{
+							"name": "Add Parts",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ea89277a748d0435c54a061d2deaea0e8010e8d0\t",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \n    \"part_name\":\"add more games\",\n    \"emp_id\":5,\n    \"projet_id\":16\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/parts/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"parts",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get all parts",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token df6e4a1f0d2ddfbc29143e7e6b242176908946a8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/allparts/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"allparts",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Parts",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ca832476017756ba3a387059044736500515dbba",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{   \n    \"part_name\":\"python libraries for automation \",\n    \"emp_id\":2,\n    \"projet_id\":3\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/updateparts/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"updateparts",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete parts",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/deleteparts/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"deleteparts",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Part img doc",
+					"item": [
+						{
+							"name": "Add part img doc",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "project_id",
+											"value": "96",
+											"type": "text"
+										},
+										{
+											"key": "project_doc",
+											"type": "file",
+											"src": "/home/koli/Downloads/Employee_Details.pdf"
+										},
+										{
+											"key": "project_img",
+											"type": "file",
+											"src": "/home/koli/Pictures/Screenshots/Screenshot from 2023-05-08 11-55-31.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/projectimgioc/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"projectimgioc",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get part imag and doc",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/projectimgioc/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"projectimgioc",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update part img doc",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "project_id",
+											"value": "93",
+											"type": "text"
+										},
+										{
+											"key": "project_doc",
+											"type": "file",
+											"src": "/home/koli/Downloads/Project_Details.pdf"
+										},
+										{
+											"key": "project_img",
+											"type": "file",
+											"src": "/home/koli/Pictures/Screenshots/Screenshot from 2022-12-29 12-41-38.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/updateprojectimgioc/1/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"updateprojectimgioc",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete part img doc",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/deleteprojectimgioc/1/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"deleteprojectimgioc",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Tasks",
+					"item": [
+						{
+							"name": "Add Task",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token df6e4a1f0d2ddfbc29143e7e6b242176908946a8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emp_id\":2,\n    \"projet_id\":12,\n    \"parts_id\":5,\n    \"parts_quantity\":30,\n    \"opretions\":\"Clean and holl\",\n    \"working_status\":\"running\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/task/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"task",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Task",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ca832476017756ba3a387059044736500515dbba",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/alltasks/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"alltasks",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update task",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "emp_id",
+											"value": "52",
+											"type": "text"
+										},
+										{
+											"key": "projet_id",
+											"value": "93",
+											"type": "text"
+										},
+										{
+											"key": "parts_id",
+											"value": "49",
+											"type": "text"
+										},
+										{
+											"key": "opretions",
+											"value": "f and add 1",
+											"type": "text"
+										},
+										{
+											"key": "working_status",
+											"value": "InProgress",
+											"type": "text"
+										},
+										{
+											"key": "part_doc",
+											"type": "file",
+											"src": "/home/koli/Downloads/Project_Details (1).pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/updatetasks/30/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"updatetasks",
+										"30",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Task delete",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/deletetasks/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"deletetasks",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transporter",
+					"item": [
+						{
+							"name": "Add Task",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ca832476017756ba3a387059044736500515dbba",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Ram more\",\n    \"contact_number\":6363545436,\n    \"vehicle_type\":\"lorry truck \"\n   \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/transporter/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"transporter",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Task",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/alltransporter/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"alltransporter",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update task",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\":\"Ram more\",\n    \"contact_number\":6354363066,\n    \"vehicle_type\":\"lorry truck \"\n   \n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/updatetransporter/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"updatetransporter",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Task delete",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/deletetransporter/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"deletetransporter",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "inventory",
+					"item": [
+						{
+							"name": "Add inventory",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ff6023410e71cdba669ef7a2657b85a4a7860321",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"inventory_name\":\"laptops and computers\",\n    \"supplier_name\":\"rakesh\",\n    \"supplier_address\":\"surat navagam\",\n    \"supplier_contact\":99999654,\n    \"stock_quantity\":20,\n    \"costing\":\"120000.rs\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/inventory/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"inventory",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Task",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ca832476017756ba3a387059044736500515dbba",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/allinventory/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"allinventory",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update task",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"opretions\":\"hujhjhj\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/updateinventory/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"updateinventory",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Task delete",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/deletetinventory/1/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"deletetinventory",
+										"1",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "All filters",
+					"item": [
+						{
+							"name": "User filter",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"tejas\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/filterusers/?id=1&username=abhi&email=abhi@gmail.com",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"filterusers",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "1"
+										},
+										{
+											"key": "username",
+											"value": "abhi"
+										},
+										{
+											"key": "email",
+											"value": "abhi@gmail.com"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Project filter",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/filterproject/?id=2",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"filterproject",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "2"
+										},
+										{
+											"key": "project_name",
+											"value": "freelanser",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Parts Filters",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/filterpart/?id=3&part_name=xyzabc",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"filterpart",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										},
+										{
+											"key": "part_name",
+											"value": "xyzabc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Tasks Filters",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 9194fdac1b7c885b30fe54e15214c299b5799715",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/filtertask/?id=3&opretions=testing demo",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"filtertask",
+										""
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "3"
+										},
+										{
+											"key": "opretions",
+											"value": "testing demo"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Admin side leave appliction",
+					"item": [
+						{
+							"name": "Get all user leave requests",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ea89277a748d0435c54a061d2deaea0e8010e8d0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://192.168.0.102:8080/LeaveapplicationViewAdmin/",
+									"protocol": "http",
+									"host": [
+										"192",
+										"168",
+										"0",
+										"102"
+									],
+									"port": "8080",
+									"path": [
+										"LeaveapplicationViewAdmin",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "is_approved  user leave requests",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ea89277a748d0435c54a061d2deaea0e8010e8d0",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"is_approved\":\"Rejected\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000//LeaveapplicationUpdate/55/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"",
+										"LeaveapplicationUpdate",
+										"55",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login and Logout Copy",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"raman\",\n    \"password\":\"admin@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/Adminlogin/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"Adminlogin",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "Token e69037d39f6e6059e4db7c92c1b44c6dec1a58b5",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"abhi\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/logout/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"logout",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "inventry_db",
+					"item": [
+						{
+							"name": "inv_pdf",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/generate-pdf/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"generate-pdf",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "project-pdf",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "employee-pdf",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "purchase-order-bills",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "projectdata_pdf",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"project_name\":[\"TATA project\"]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/projectdata_pdf/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"projectdata_pdf",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Mobile team",
+			"item": [
+				{
+					"name": "Login and Logout",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"abhi\",\n    \"password\":\"admin@123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/login/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"login",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "Token e69037d39f6e6059e4db7c92c1b44c6dec1a58b5",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"abhi\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/logout/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"logout",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User check_in and check_out",
+					"item": [
+						{
+							"name": "check_in_and_check_out",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 1e1b39e25b205bc3d851485bae364c07faa82334",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"check_out_time\":\"2023-04-14 03:00:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/timesheet/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"timesheet",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_check_in_check_out",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 1e1b39e25b205bc3d851485bae364c07faa82334",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/get_check_in_check_out/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"get_check_in_check_out",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Login user history",
+					"item": [
+						{
+							"name": "userhistory",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 3f6525d991d6146c60d70b5f14d1fcfda3d0d31a",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"month\":\"04\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/get_user_history/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"get_user_history",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user monthly history",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 1e1b39e25b205bc3d851485bae364c07faa82334",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"month\":\"03\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/get_user_filter/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"get_user_filter",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get login user info",
+					"item": [
+						{
+							"name": "Get project info for loging user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 1e1b39e25b205bc3d851485bae364c07faa82334",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emp\":[2],\n    \"project_name\":\"xyzabc\",\n    \"project_pricing\":\"100000\",\n    \"inventory\":\"steel\",\n    \"working_status\":\"running\",\n    \"project_description\":\"asdf\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/project/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"project",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get project task for login user",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ff6023410e71cdba669ef7a2657b85a4a7860321",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"emp_id\":2,\n    \"projet_id\":2,\n    \"parts_id\":2,\n    \"parts_quantity\":30,\n    \"opretions\":\"testing demo\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/task/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"task",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get project and part info for login info",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 97b90f65272a55c281b02b9cf64fc1641b5245e4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://127.0.0.1:8000/ProjectPartView/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"ProjectPartView",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User update api",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ff6023410e71cdba669ef7a2657b85a4a7860321",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "project_name",
+											"value": "Project aws 1",
+											"type": "text"
+										},
+										{
+											"key": "parts_name",
+											"value": "python libraries 3",
+											"type": "text"
+										},
+										{
+											"key": "task_name",
+											"value": "f and add 1",
+											"type": "text"
+										},
+										{
+											"key": "part_description",
+											"value": "i am done with this task 3",
+											"type": "text"
+										},
+										{
+											"key": "task_img",
+											"type": "file",
+											"src": "/home/koli/Pictures/download.jpeg"
+										},
+										{
+											"key": "working_status",
+											"value": "Complete",
+											"type": "text"
+										},
+										{
+											"key": "start_time",
+											"value": "2023-05-29 09:00:00",
+											"type": "text"
+										},
+										{
+											"key": "end_time",
+											"value": "2023-05-29 19:00:00",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/ProjectPartView/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"ProjectPartView",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Userprofile",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Update user profile",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "full_name",
+											"value": "full_name",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "jacky11@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone_number",
+											"value": "6354363066",
+											"type": "text"
+										},
+										{
+											"key": "profilei_image",
+											"type": "file",
+											"src": "/home/koli/Downloads/pexels-pixabay-220453.jpg"
+										},
+										{
+											"key": "emergency_no",
+											"value": "9712808140",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "navagam,dindoli,surat-394210",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/user-profile/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"user-profile",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Leave_appliction",
+					"item": [
+						{
+							"name": "LeaveapplicationView",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 1e1b39e25b205bc3d851485bae364c07faa82334",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from_date\":\"2023-03-23\",\n    \"to_date\":\"2023-03-30\",\n    \"leave_type\":\"full day\",\n    \"total_leave\":\"8\",\n    \"leave_application\":\"ggggggg\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/LeaveapplicationView/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"LeaveapplicationView",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Leaveapplication",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token ff6023410e71cdba669ef7a2657b85a4a7860321",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"from_date\":\"2023-03-22\",\n    \"to_date\":\"2023-03-30\",\n    \"leave_type\":\"full day\",\n    \"total_leave\":\"8\",\n    \"leave_application\":\"dfdfd\"\n\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/getallLeaveapplication/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"getallLeaveapplication",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Filter leave month",
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Token 1e1b39e25b205bc3d851485bae364c07faa82334",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"month\":\"04\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/Leaveapplicationfilter/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"Leaveapplicationfilter",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
